@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    color: whitesmoke;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+@property --rotate{
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+}
+
+@keyframes rotate{
+    from{
+--rotate : 0deg;
+    }
+    to{
+--rotate : 360deg;
+    }
+    
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+    max-width: 320px;
+    scale: .8;
+    padding-inline: 20px;   
+    padding-bottom: 20px;
+    border-radius: 30px;
+    border: 0 solid rgba(240, 238, 238, 0);
+    background: linear-gradient(rgb(0, 0, 0)) padding-box,
+    conic-gradient(from var(--rotate) ,black,rgb(228, 30, 123),rgba(0, 0, 0, 0.841)) border-box;
+    animation: rotate 5s infinite linear ;
+    animation-play-state: paused;
+    transition: all .3s ease-in;
+    text-shadow: 0px 0px 10px red;
+    box-shadow: 0px 0px 0px rgb(194, 23, 40);
+}
+
+.box:hover{
+    animation-play-state: running;
+    border-width: 5px;
+    box-shadow: 0px 0px 50px rgb(147, 22, 122);
+    color:rgb(255, 0, 136) ;
+    text-shadow: 0px 0px 20px rgb(255, 0, 136);
+    scale: .9;
+}
+
+.box img{
+    width: 300px;
+}
